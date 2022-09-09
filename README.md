@@ -1,2 +1,2 @@
-# Curso-em-video
- primeiro repositorio curso em video
+# Curso em Vídeo
+ primeiro repositorio curso em vídeo
