@@ -1,5 +1,7 @@
 # JOKENPO
 
+def linha():
+    print('\n', '<->'*16)
 
 import random
 import time
@@ -8,49 +10,56 @@ jogada = ['[0]\tPEDRA', '[1]\tPAPEL', '[2]\tTESOURA']
 repete = True
 while repete == True:
     comput = random.randint(0,2)      
-    print('\n Escolha: ')
+    linha()
+    print('\n >>>> Escolha: ')
     for opcao in jogada:
         print(opcao)
     jogador = input('\n')
     if jogador in ('0', '1', '2'):
         jogador = int(jogador)
-        print('\n', '<->'*16, '\n')
         time.sleep(0.5)
-        print('\t jooookennn...'.upper())
+        print('\t\t jooookennn...'.upper())
         time.sleep(1)
-        print('\t\t ...nnpô'.upper())
-        print('\n', '<->'*16)
+        print('\t\t\t ...nnpô'.upper())
         time.sleep(0.3)
-        print('\n Computador', jogada[comput][3:]) # lista(variavel)
-        print(' Jogador', jogada[jogador][3:], '\n')
-    
+        print(f' Jogador ====> {jogada[jogador][3:]} \n') # lista[variável][manipulação da string]
+        print(f'\n\t\t {jogada[comput][3:]}  <==== Computador') # lista(variavel)
+        linha()
+        
+        time.sleep(1)
         if jogador == 2 or comput == 2:
             if jogador == 2 and comput == 0:
-                print(' Você perdeu'.upper())
+                print('\n\t\t** Você perdeu **'.upper())
             elif jogador == 2 and comput == 1:
-                print(' Você venceu'.upper())
+                print('\n\t\t** Você venceu **'.upper())
             elif jogador == 2 and comput == 2:
-                print(' Vamos de novo'.upper())
+                print('\n\t\t** Empatou **'.upper())
             elif comput == 2 and jogador == 0:
-                print(' Você venceu'.upper())
+                print('\n\t\t** Você venceu **'.upper())
             elif comput == 2 and jogador == 1:
-                print(' Você perdeu'.upper())
+                print('\n\t\t** Você perdeu **'.upper())
         elif jogador > comput:
-            print(' Você venceu'.upper())
+            print('\n\t\t** Você venceu **'.upper())
         elif jogador == comput:
-            print(' Vamos de novo'.upper())
+            print('\n\t\t** Empatou **'.upper())
         elif jogador < comput:
-            print(' Você perdeu'.upper())
-        print('\n\t <[S] Para jogar de novo> \n\t <[N] Para desistir>')
-        resposta = input('\n')
-        if resposta in ('s', 'S'):
-            repete = True
-        elif resposta in ('n', 'N'):
-            repete = False
+            print('\n\t\t** Você perdeu **'.upper())
+        linha()
+        
+        resposta = ''
+        while resposta != 'N' and resposta != 'S':
+            print('\n >>>>> Vamos de novo? \n\t <[S] Para jogar novamente> \n\t <[N] Para desistir>')
+            resposta = input('\n').upper().strip()
+            if resposta in ('S', 'SIM'):
+                repete = True
+            elif resposta in ('NÃO', 'NAO', 'N'):
+                repete = False                               
+            elif resposta != 'N' and resposta != 'S':         
+                print('\n Não entendi', end = '')
+            
     else:
-        print(' Jogada inválida \n')
+        print('\t ** Jogada inválida **\n')
+        linha()
         repete = True
-
-
-
-
+    
+print('\n Obrigado por jogar ')
