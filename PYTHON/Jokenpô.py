@@ -1,5 +1,3 @@
-# JOKENPO
-
 def linha():
     print('\n', '<->'*16)
 
@@ -7,8 +5,8 @@ import random
 import time
 
 jogada = ['[0]\tPEDRA', '[1]\tPAPEL', '[2]\tTESOURA']
-repete = True
-while repete == True:
+resposta = 'S'
+while resposta in 'S':
     comput = random.randint(0,2)      
     linha()
     print('\n >>>> Escolha: ')
@@ -27,17 +25,10 @@ while repete == True:
         linha()
         
         time.sleep(1)
-        if jogador == 2 or comput == 2:
-            if jogador == 2 and comput == 0:
-                print('\n\t\t** Você perdeu **'.upper())
-            elif jogador == 2 and comput == 1:
-                print('\n\t\t** Você venceu **'.upper())
-            elif jogador == 2 and comput == 2:
-                print('\n\t\t** Empatou **'.upper())
-            elif comput == 2 and jogador == 0:
-                print('\n\t\t** Você venceu **'.upper())
-            elif comput == 2 and jogador == 1:
-                print('\n\t\t** Você perdeu **'.upper())
+        if jogador == 2 and comput == 0:
+            print('\n\t\t** Você perdeu **'.upper())
+        elif comput == 2 and jogador == 0:
+            print('\n\t\t** Você venceu **'.upper())
         elif jogador > comput:
             print('\n\t\t** Você venceu **'.upper())
         elif jogador == comput:
@@ -45,15 +36,14 @@ while repete == True:
         elif jogador < comput:
             print('\n\t\t** Você perdeu **'.upper())
         linha()
-        
-        resposta = ''
-        while resposta != 'N' and resposta != 'S':
+       
+        while True:
             print('\n >>>>> Vamos de novo? \n\t <[S] Para jogar novamente> \n\t <[N] Para desistir>')
             resposta = input('\n').upper().strip()
-            if resposta in ('S', 'SIM'):
-                repete = True
-            elif resposta in ('NÃO', 'NAO', 'N'):
-                repete = False                               
+            if resposta in ('s', 'S'):
+                break
+            elif resposta in ('n', 'N'):
+                break                              
             elif resposta != 'N' and resposta != 'S':         
                 print('\n Não entendi', end = '')
             
