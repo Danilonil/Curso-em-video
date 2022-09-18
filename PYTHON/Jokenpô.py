@@ -36,7 +36,7 @@ while resposta in 'S':
         elif jogador < comput:
             print('\n\t\t** Você perdeu **'.upper())
         linha()
-       
+    
         while True:
             print('\n >>>>> Vamos de novo? \n\t <[S] Para jogar novamente> \n\t <[N] Para desistir>')
             resposta = input('\n').upper().strip()
