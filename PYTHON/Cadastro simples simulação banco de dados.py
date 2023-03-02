@@ -42,7 +42,7 @@ if cont_maioridade > 0:
     print(f'\n Nesso grupo de pessoas, \n {cont_maioridade} pessoa(s) é(são) maior(es) de idade')
 if cont_h > 0:
     print(f' {cont_h} homen(s) foi(foram) cadastrado(s)'
-          f'\n E o homem mais velho se chama {homem_velho}')
+        f'\n E o homem mais velho se chama {homem_velho}')
 if cont_m > 0:
     print(f' {cont_m} mulher(es) tem menos de 20 anos')
     
