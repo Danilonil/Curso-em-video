@@ -1,5 +1,4 @@
 # CADASTRO DE PESSOAS
-
 def linha():
     print('\n', '=+='*16)
 
